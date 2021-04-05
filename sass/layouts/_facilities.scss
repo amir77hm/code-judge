@@ -1,0 +1,69 @@
+.facilities {
+  margin-bottom: 3rem;
+  .Needless {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 2rem 0;
+    color: #333;
+  }
+
+  .items {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .item {
+      flex-basis: 25%;
+      margin: 0 6rem;
+      text-align: center;
+      padding: 2rem 4rem;
+
+      &:hover {
+        box-shadow: var(--shadow-light);
+      }
+
+      &__img {
+        img {
+          width: 100%;
+        }
+      }
+      &__text {
+        font-size: 1.4rem;
+        margin-top: 3rem;
+        color: #333;
+      }
+    }
+  }
+
+  .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .btn-catalog,
+    .btn-more {
+      padding: 0;
+      font-size: 1.3rem;
+      width: 12rem;
+      height: 3.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.6rem;
+    }
+
+    .btn-catalog {
+      border: 2px solid var(--color-secondary);
+      color: var(--color-secondary);
+      margin-right: 1rem;
+    }
+
+    .btn-more {
+      background-color: var(--color-secondary);
+      color: #fff;
+      margin-left: 1rem;
+    }
+  }
+}

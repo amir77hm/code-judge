@@ -1,0 +1,30 @@
+.ourClient {
+  text-align: center;
+  margin: 10rem 0;
+  .box {
+    display: inline-block;
+    background-color: var(--color-primary);
+    border-radius: 1rem;
+    padding: 2.5rem 8rem;
+    color: #fff;
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    span {
+      font-size: 1.9rem;
+      display: block;
+      line-height: 2;
+    }
+
+    .btn {
+      background-color: #fff;
+      color: var(--color-primary);
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 0.5rem 3.5rem;
+      margin-top: 2rem;
+    }
+  }
+}

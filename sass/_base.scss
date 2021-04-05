@@ -16,6 +16,12 @@
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
 
   --line: 1px solid var(--color-grey-light-2);
+
+  // ranga khodemoon
+  --color-primary: rgb(188, 46, 201);
+  --color-primary-light: rgba(188, 46, 201, 0.3);
+
+  --color-secondary: rgb(255, 88, 88);
 }
 
 $bp-largest: 75em; // 1200px
@@ -44,4 +50,12 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
