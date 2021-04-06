@@ -437,7 +437,7 @@ ul {
         background-color: var(--color-primary);
         border-radius: 100px;
         left: 6px;
-        transition: all 1s cubic-bezier(0.91, 0, 0.14, 1.35); }
+        transition: all 0.5s cubic-bezier(0.91, 0, 0.14, 1.35); }
       .header .navigation .toggle-nav__label .toggle-nav__icon::before {
         top: -10px; }
       .header .navigation .toggle-nav__label .toggle-nav__icon::after {
