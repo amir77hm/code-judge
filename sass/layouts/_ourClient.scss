@@ -2,6 +2,11 @@
   text-align: center;
   margin: 10rem 0;
 
+  @media only screen and (max-width: $bp-small) {
+    width: 90%;
+    margin: 10rem auto;
+  }
+
   .box {
     display: inline-block;
     background-color: var(--color-primary);
@@ -55,6 +60,7 @@
       font-weight: 700;
       padding: 0.5rem 3.5rem;
       margin-top: 2rem;
+      z-index: 1;
     }
   }
 }

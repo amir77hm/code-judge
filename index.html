@@ -20,41 +20,45 @@
     <header class="header">
       <div class="container">
         <nav class="navigation">
-          <div class="menu-icon">
-            <div class="hambergur"></div>
-            <input type="checkbox" />
+          <div class="toggle-nav">
+            <input type="checkbox" name="toggler" id="toggler" />
+            <label for="toggler" class="toggle-nav__label">
+              <div class="toggle-nav__icon"></div>
+            </label>
           </div>
-          <div class="authentication">
-            <a href="#" class="btn btn-hover btn-hover__white"
-              >ورود / ثبت نام</a
-            >
+          <div class="toggle-menu">
+            <div class="authentication">
+              <a href="#" class="btn btn-hover btn-hover__white"
+                >ورود / ثبت نام</a
+              >
+            </div>
+            <ul class="menu">
+              <li class="menu__item">
+                <a href="#" class="menu__link">صفحه اصلی</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">معرفی سرویس</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">خدمات ما</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">راهکارهای توسعه</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">چرا ما ؟</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">مشتریان ما</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">سوالات متداول</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">درباره ما</a>
+              </li>
+            </ul>
           </div>
-          <ul class="menu">
-            <li class="menu__item">
-              <a href="#" class="menu__link">صفحه اصلی</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">معرفی سرویس</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">خدمات ما</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">راهکارهای توسعه</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">چرا ما ؟</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">مشتریان ما</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">سوالات متداول</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">درباره ما</a>
-            </li>
-          </ul>
           <div class="logo">
             <img src="img/logo-header.png" alt="logo" />
           </div>
@@ -373,7 +377,13 @@
               </div>
             </div>
             <div class="copyRight">
-              <p>کلیه حقوق این ساین متعلق به <span>codejudge</span> می باشد</p>
+              <p>
+                <span class="rtl"> می باشد. بهاره داودی</span>
+                <span>codejudge</span>
+                <span class="rtl">کلیه حقوق این سایت متعلق به</span>
+
+                <!-- کلیه حقوق این سایت متعلق به codejudge میباشد . -->
+              </p>
             </div>
           </div>
         </div>

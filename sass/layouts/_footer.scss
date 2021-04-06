@@ -75,7 +75,7 @@
 
     .grid-system {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      // grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
       grid-template-areas:
         "logos Helpful-links codejudge-links codejudge-logo"
         "social phones phones addresses"
@@ -84,20 +84,62 @@
       grid-gap: 2rem;
       text-align: right;
       grid-row-gap: 5rem;
+
+      @media only screen and (max-width: $bp-small) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+          "logos codejudge-logo codejudge-logo"
+          "logos Helpful-links codejudge-links"
+          " phones addresses addresses"
+          ". social ."
+          ". copyRight .";
+      }
+
+      @media only screen and (max-width: $bp-Xsmallest) {
+        grid-template-areas:
+          "logos  codejudge-logo"
+          "logos codejudge-links"
+          "phones  Helpful-links"
+          "social  addresses"
+          "copyRight copyRight";
+      }
     }
 
     .logos {
       grid-area: logos;
 
+      @media only screen and (max-width: $bp-small) {
+        display: flex;
+        flex-direction: column;
+        margin-left: 4rem;
+      }
+
+      @media only screen and (max-width: $bp-Xsmallest) {
+        margin-left: 0;
+      }
+
       img {
         @media only screen and (max-width: $bp-largest) {
           width: 30%;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+          width: 8rem;
+          margin-bottom: 3rem;
         }
       }
     }
 
     .Helpful-links {
       grid-area: Helpful-links;
+
+      @media only screen and (max-width: $bp-small) {
+        margin-right: 4rem;
+      }
+
+      @media only screen and (max-width: $bp-Xsmallest) {
+        margin-right: 1rem;
+      }
 
       &__items {
       }
@@ -162,11 +204,18 @@
         font-size: 1.3rem;
         font-weight: 600;
         line-height: 1.5;
+
+        @media only screen and (max-width: $bp-small) {
+          font-size: 1.6rem;
+        }
       }
     }
 
     .social {
       grid-area: social;
+      @media only screen and (max-width: $bp-small) {
+        text-align: center;
+      }
 
       p {
         font-size: 1.5rem;
@@ -174,6 +223,10 @@
       }
 
       .logos {
+        @media only screen and (max-width: $bp-small) {
+          display: flex;
+          flex-direction: row;
+        }
         img {
           width: 2rem;
           margin: 0.4rem;
@@ -183,6 +236,11 @@
 
     .phones {
       grid-area: phones;
+      margin-right: 4rem;
+
+      @media only screen and (max-width: $bp-small) {
+        margin-left: 4rem;
+      }
 
       .title {
         font-size: 1.5rem;
