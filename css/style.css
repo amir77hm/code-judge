@@ -407,53 +407,51 @@ ul {
   @media only screen and (max-width: 50em) {
     .header .navigation {
       flex-direction: row-reverse;
-      padding: 0 1rem; } }
-  .header .navigation .toggle-nav {
+      padding: 0 2rem 0 1rem; } }
+  .header .navigation #toggler {
     display: none; }
-    .header .navigation .toggle-nav__icon {
-      position: relative;
+  .header .navigation .toggle-nav__label {
+    cursor: pointer;
+    width: 4.5rem;
+    height: 4.5rem;
+    position: relative;
+    display: none; }
+    @media only screen and (max-width: 50em) {
+      .header .navigation .toggle-nav__label {
+        display: block; } }
+    .header .navigation .toggle-nav__label .toggle-nav__icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       width: 30px;
       height: 4px;
       background-color: var(--color-primary);
       border-radius: 100px;
       vertical-align: center;
       margin-right: 6px; }
-    @media only screen and (max-width: 50em) {
-      .header .navigation .toggle-nav {
-        display: block;
-        cursor: pointer; }
-        .header .navigation .toggle-nav__label {
-          display: block;
-          width: 45px !important;
-          height: 45px !important;
-          position: relative;
-          cursor: pointer; }
-        .header .navigation .toggle-nav__icon {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 30px;
-          height: 4px;
-          background-color: var(--color-primary);
-          border-radius: 100px;
-          vertical-align: center;
-          margin-right: 6px; }
-          .header .navigation .toggle-nav__icon::before, .header .navigation .toggle-nav__icon::after {
-            position: absolute;
-            content: "";
-            width: 30px;
-            height: 4px;
-            background-color: var(--color-primary);
-            border-radius: 100px;
-            left: 6px; }
-          .header .navigation .toggle-nav__icon::before {
-            top: -10px; }
-          .header .navigation .toggle-nav__icon::after {
-            top: 10px; }
-        .header .navigation .toggle-nav #toggler {
-          display: none; } }
-  .header .navigation #toggler:checked + .toggle-nav__icon {
+      .header .navigation .toggle-nav__label .toggle-nav__icon::before, .header .navigation .toggle-nav__label .toggle-nav__icon::after {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 4px;
+        background-color: var(--color-primary);
+        border-radius: 100px;
+        left: 6px;
+        transition: all 1s cubic-bezier(0.91, 0, 0.14, 1.35); }
+      .header .navigation .toggle-nav__label .toggle-nav__icon::before {
+        top: -10px; }
+      .header .navigation .toggle-nav__label .toggle-nav__icon::after {
+        top: 10px; }
+  .header .navigation #toggler:checked ~ .toggle-menu {
+    transform: translateY(0); }
+  .header .navigation #toggler:checked ~ .toggle-nav__label .toggle-nav__icon {
     background-color: transparent; }
+    .header .navigation #toggler:checked ~ .toggle-nav__label .toggle-nav__icon::before {
+      top: 0px;
+      transform: rotate(135deg); }
+    .header .navigation #toggler:checked ~ .toggle-nav__label .toggle-nav__icon::after {
+      transform: rotate(-135deg);
+      top: 0px; }
   .header .navigation .toggle-menu {
     display: flex;
     align-items: center;
@@ -461,15 +459,18 @@ ul {
     flex: 1; }
     @media only screen and (max-width: 50em) {
       .header .navigation .toggle-menu {
+        display: flex;
         position: absolute;
-        top: 8rem;
-        right: 1rem;
+        top: 6.5rem;
+        right: 0rem;
         flex-direction: column-reverse;
         background-color: #eee;
         z-index: 1;
         border-radius: 1rem;
         margin-top: -1rem;
-        padding: 1rem 10rem; } }
+        padding: 1rem 10rem;
+        transform: translateY(-200%);
+        transition: transform 0.4s cubic-bezier(0.91, 0, 0.14, 1.35); } }
     .header .navigation .toggle-menu .authentication .btn {
       font-size: 1.3rem;
       font-weight: 700;

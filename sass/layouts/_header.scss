@@ -12,74 +12,74 @@
 
     @media only screen and (max-width: $bp-mediumest) {
       flex-direction: row-reverse;
-      padding: 0 1rem;
+      padding: 0 2rem 0 1rem;
     }
 
-    .toggle-nav {
+    #toggler {
+      display: none;
+    }
+
+    .toggle-nav__label {
+      // position: relative;
+      cursor: pointer;
+      width: 4.5rem;
+      height: 4.5rem;
+      position: relative;
       display: none;
 
-      &__icon {
-        position: relative;
+      @media only screen and (max-width: $bp-mediumest) {
+        display: block;
+      }
+
+      .toggle-nav__icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
         width: 30px;
         height: 4px;
         background-color: var(--color-primary);
         border-radius: 100px;
         vertical-align: center;
         margin-right: 6px;
-      }
 
-      @media only screen and (max-width: $bp-mediumest) {
-        //  show hambergur munu
-        &__label {
-          display: block;
-          width: 45px !important;
-          height: 45px !important;
-          position: relative;
-          cursor: pointer;
-        }
-
-        display: block;
-        cursor: pointer;
-
-        &__icon {
+        &::before,
+        &::after {
           position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
+          content: "";
           width: 30px;
           height: 4px;
           background-color: var(--color-primary);
           border-radius: 100px;
-          vertical-align: center;
-          margin-right: 6px;
-
-          &::before,
-          &::after {
-            position: absolute;
-            content: "";
-            width: 30px;
-            height: 4px;
-            background-color: var(--color-primary);
-            border-radius: 100px;
-            left: 6px;
-          }
-
-          &::before {
-            top: -10px;
-          }
-
-          &::after {
-            top: 10px;
-          }
+          left: 6px;
+          transition: all 1s cubic-bezier(0.91, 0, 0.14, 1.35);
         }
 
-        #toggler {
-          display: none;
+        &::before {
+          top: -10px;
+        }
+
+        &::after {
+          top: 10px;
         }
       }
     }
 
-    #toggler:checked + .toggle-nav__icon {
+    #toggler:checked ~ .toggle-menu {
+      transform: translateY(0);
+    }
+
+    #toggler:checked ~ .toggle-nav__label .toggle-nav__icon {
       background-color: transparent;
+
+      &::before {
+        top: 0px;
+        transform: rotate(135deg);
+      }
+
+      &::after {
+        transform: rotate(-135deg);
+        top: 0px;
+      }
     }
 
     .toggle-menu {
@@ -89,16 +89,18 @@
       flex: 1;
 
       @media only screen and (max-width: $bp-mediumest) {
-        display: none;
+        display: flex;
         position: absolute;
-        top: 8rem;
-        right: 1rem;
+        top: 6.5rem;
+        right: 0rem;
         flex-direction: column-reverse;
         background-color: #eee;
         z-index: 1;
         border-radius: 1rem;
         margin-top: -1rem;
         padding: 1rem 10rem;
+        transform: translateY(-200%);
+        transition: transform 0.4s cubic-bezier(0.91, 0, 0.14, 1.35);
       }
 
       .authentication {
