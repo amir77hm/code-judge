@@ -1,6 +1,5 @@
 .ourClient {
   text-align: center;
-  margin: 10rem 0;
 
   @media only screen and (max-width: $bp-small) {
     width: 90%;
@@ -15,51 +14,61 @@
     color: #fff;
     position: relative;
 
+    @media only screen and (max-width: $bp-small) {
+      padding: 2.5rem 2.5rem;
+    }
+
     &::after {
       position: absolute;
       content: "";
-      -webkit-mask-image: url("../img/customers1.png");
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-position: 110% -500%;
-      -webkit-mask-size: 50% 90%;
+      background: url("../img/bg-path1.svg") no-repeat;
+      background-position: -10% 200%;
+      background-size: 140% 140%;
       width: 100%;
       height: 100%;
       top: 0;
       right: 0;
-      background-color: rgb(153, 179, 255);
+
+      @media only screen and (max-width: $bp-small) {
+        background-position: -200% 600% !important;
+        background-size: 110% 110%;
+      }
     }
 
     &::before {
       position: absolute;
       content: "";
-      -webkit-mask-image: url("../img/bg-path1.png");
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-position: -600% 40%;
-      -webkit-mask-size: 90% 190%;
+      background: url("../img/bg-path3.svg") no-repeat;
+      background-size: 150% 150%;
+      background-position: 140% 0%;
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
-      background-color: rgb(153, 179, 255);
+
+      @media only screen and (max-width: $bp-small) {
+        background-position: 500% -300% !important;
+        background-size: 110% 110%;
+      }
     }
+
     h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 2rem;
     }
 
     span {
-      font-size: 1.9rem;
-      display: block;
+      font-size: 1.5rem;
       line-height: 2;
     }
 
     .btn {
       background-color: #fff;
       color: var(--color-primary);
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      padding: 0.5rem 3.5rem;
-      margin-top: 2rem;
+      padding: 1rem 4rem;
+      margin-top: 3rem;
       z-index: 1;
     }
   }

@@ -1,4 +1,8 @@
 .header {
+  .container {
+    margin-top: 0;
+  }
+
   @media only screen and (max-width: $bp-largest) {
     width: 95%;
     margin: 0 auto;
@@ -35,7 +39,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 30px;
+        width: 40px;
         height: 4px;
         background-color: var(--color-primary);
         border-radius: 100px;
@@ -46,10 +50,10 @@
         &::after {
           position: absolute;
           content: "";
-          width: 30px;
+          width: 40px;
           height: 4px;
           background-color: var(--color-primary);
-          border-radius: 100px;
+          border-radius: 10px;
           left: 6px;
           transition: all 0.5s cubic-bezier(0.91, 0, 0.14, 1.35);
         }
@@ -73,11 +77,11 @@
 
       &::before {
         top: 0px;
-        transform: rotate(135deg);
+        transform: rotate(150deg);
       }
 
       &::after {
-        transform: rotate(-135deg);
+        transform: rotate(-150deg);
         top: 0px;
       }
     }
@@ -85,7 +89,6 @@
     .toggle-menu {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       flex: 1;
 
       @media only screen and (max-width: $bp-mediumest) {
@@ -100,7 +103,7 @@
         margin-top: -1rem;
         padding: 1rem 10rem;
         transform: translateY(-200%);
-        transition: transform 0.4s cubic-bezier(0.91, 0, 0.14, 1.35);
+        transition: all 0.4s cubic-bezier(0.91, 0, 0.14, 1.35);
       }
 
       .authentication {
@@ -122,9 +125,15 @@
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
+        flex: 1;
+        justify-content: space-between;
+        padding: 0 2rem;
 
         @media only screen and (max-width: $bp-mediumest) {
           flex-direction: column;
+        }
+        @media only screen and (max-width: $bp-medium) {
+          padding: 0 2rem;
         }
 
         &__item {
@@ -135,10 +144,16 @@
         }
 
         &__link {
-          padding: 0 1.8rem;
-          font-size: 1.4rem;
+          padding: 0 1rem;
+          font-size: 1.6rem;
           position: relative;
           color: #000;
+
+          @media only screen and (max-width: $bp-medium) {
+            padding: 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+          }
 
           @media only screen and (max-width: $bp-mediumest) {
             font-size: 1.6rem;
@@ -189,14 +204,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 6rem 5rem;
-    background: radial-gradient(
-        circle at 90% 20%,
-        rgb(255, 87, 180) 0,
-        transparent 20rem
-      ),
-      radial-gradient(circle at 10% 85%, rgb(255, 196, 87) 0, transparent 14rem),
-      radial-gradient(circle at 25% 85%, rgb(255, 87, 180) 0, transparent 8rem),
-      linear-gradient(to right, rgb(182, 182, 182), rgb(188, 46, 201));
+    background: radial-gradient(circle at 95% 5%, #fc80f7, transparent 30rem),
+      radial-gradient(circle at 10% 80%, #fc7e66 0, transparent 16rem),
+      radial-gradient(circle at 25% 85%, #ee7bf9 0, transparent 12rem),
+      linear-gradient(to right, #acb7c3, #845dfc);
     border-radius: 3.3rem;
     color: #fff;
     position: relative;
@@ -225,12 +236,19 @@
         padding: 0 4rem;
         margin-top: 4rem;
       }
+
+      @media only screen and (max-width: $bp-medium) {
+        flex-basis: 50%;
+      }
+      @media only screen and (max-width: $bp-mediumest) {
+        flex-basis: 60%;
+      }
       h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
       }
       h3 {
-        font-size: 1.8rem;
-        margin-bottom: 3rem;
+        font-size: 1.6rem;
+        margin: 1rem 0;
       }
       .btn {
         font-size: 1.7rem;
@@ -238,6 +256,7 @@
         background-color: #fff;
         padding: 1rem 2rem;
         color: var(--color-primary);
+        margin-top: 4rem;
       }
     }
   }

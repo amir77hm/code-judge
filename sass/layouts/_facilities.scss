@@ -1,6 +1,4 @@
 .facilities {
-  margin-bottom: 3rem;
-
   .Needless {
     text-align: center;
     font-size: 1.6rem;
@@ -15,20 +13,30 @@
     justify-content: center;
     align-items: center;
 
-    @media only screen and (max-width: $bp-small) {
+    @media only screen and (max-width: $bp-smallest) {
       flex-wrap: wrap;
-      // margin: 0;
     }
 
     .item {
       flex-basis: 25%;
-      margin: 0 6rem;
+      margin: 0 3rem;
       text-align: center;
       padding: 2rem 4rem;
+      border-radius: 1rem;
 
       @media only screen and (max-width: $bp-small) {
-        padding: 2rem 0;
+        padding: 2rem;
         margin: 0 4rem;
+      }
+      @media only screen and (max-width: $bp-mediumest) {
+        flex-basis: 30%;
+        padding: 2rem;
+        margin: 0 1rem;
+      }
+      @media only screen and (max-width: $bp-smallest) {
+        flex-basis: 40%;
+        padding: 2rem;
+        margin: 1rem;
       }
 
       &:hover {
@@ -64,7 +72,7 @@
     }
 
     .btn-catalog {
-      border: 1px solid var(--color-secondary);
+      border: 3px solid var(--color-secondary);
       color: var(--color-secondary);
       margin-right: 1rem;
       font-weight: 600;
